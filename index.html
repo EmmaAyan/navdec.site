@@ -131,12 +131,26 @@
 
     <!-- Navigation buttons -->
     <div class="nav-buttons bg-apple-gray-100/80 py-3 border-b border-apple-gray-200 mb-6">
-        <div class="container mx-auto max-w-5xl flex flex-wrap justify-center gap-2 px-4">
-            <a href="#research" class="px-3 py-2 bg-apple-blue text-white rounded-full text-sm font-medium hover:bg-apple-blue/90 transition-all">Research</a>
-            <a href="#essential-tools" class="px-3 py-2 bg-apple-purple text-white rounded-full text-sm font-medium hover:bg-apple-purple/90 transition-all">Essential Tools</a>
-            <a href="#competitor-research" class="px-3 py-2 bg-apple-green text-white rounded-full text-sm font-medium hover:bg-apple-green/90 transition-all">Competitor Research</a>
-            <a href="#templates" class="px-3 py-2 bg-apple-orange text-white rounded-full text-sm font-medium hover:bg-apple-orange/90 transition-all">Templates</a>
-            <a href="#news-resources" class="px-3 py-2 bg-apple-red text-white rounded-full text-sm font-medium hover:bg-apple-red/90 transition-all">News & Resources</a>
+        <div class="container mx-auto max-w-5xl px-4">
+            <!-- Dropdown for mobile -->
+            <div class="md:hidden">
+                <select id="mobile-nav" class="w-full py-2 px-3 rounded-lg border border-apple-gray-300 bg-white text-apple-gray-900 focus:outline-none focus:ring-2 focus:ring-apple-blue">
+                    <option value="">导航到部分...</option>
+                    <option value="#research">Research</option>
+                    <option value="#essential-tools">Essential Tools</option>
+                    <option value="#competitor-research">Competitor Research</option>
+                    <option value="#templates">Templates</option>
+                    <option value="#news-resources">News & Resources</option>
+                </select>
+            </div>
+            <!-- Buttons for desktop -->
+            <div class="hidden md:flex flex-wrap justify-center gap-2">
+                <a href="#research" class="px-3 py-2 bg-apple-blue text-white rounded-full text-sm font-medium hover:bg-apple-blue/90 transition-all">Research</a>
+                <a href="#essential-tools" class="px-3 py-2 bg-apple-purple text-white rounded-full text-sm font-medium hover:bg-apple-purple/90 transition-all">Essential Tools</a>
+                <a href="#competitor-research" class="px-3 py-2 bg-apple-green text-white rounded-full text-sm font-medium hover:bg-apple-green/90 transition-all">Competitor Research</a>
+                <a href="#templates" class="px-3 py-2 bg-apple-orange text-white rounded-full text-sm font-medium hover:bg-apple-orange/90 transition-all">Templates</a>
+                <a href="#news-resources" class="px-3 py-2 bg-apple-red text-white rounded-full text-sm font-medium hover:bg-apple-red/90 transition-all">News & Resources</a>
+            </div>
         </div>
     </div>
 
@@ -520,6 +534,25 @@
                     }
                 });
             });
+            
+            // Mobile navigation dropdown
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.addEventListener('change', function() {
+                    if (this.value) {
+                        const targetElement = document.querySelector(this.value);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                            // Reset dropdown to default option after navigation
+                            setTimeout(() => {
+                                this.selectedIndex = 0;
+                            }, 500);
+                        }
+                    }
+                });
+            }
         });
     </script>
 </body>
