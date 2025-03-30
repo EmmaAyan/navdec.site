@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP6B15KZ90"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BP6B15KZ90');
+    </script>
+    <title>WebDev Navigator - Essential Resources for Web Developers</title>
+    <meta name="description" content="A curated collection of essential tools and resources for web developers, indie hackers, and digital creators.">
+    <link rel="canonical" href="https://webdev.navigator.com/">
+    <meta name="keywords" content="web development, tools, resources, indie hackers, digital creators, AI tools">
+    <meta property="og:title" content="WebDev Navigator - Essential Resources for Web Developers">
+    <meta property="og:description" content="A curated collection of essential tools and resources for web developers, indie hackers, and digital creators.">
+    <meta property="og:url" content="https://webdev.navigator.com/">
+    <meta property="og:type" content="website">
+    <!-- Use Tailwind CDN for development, for production use PostCSS plugin -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#007AFF',
+                            green: '#34C759',
+                            indigo: '#5856D6',
+                            orange: '#FF9500',
+                            pink: '#FF2D55',
+                            purple: '#AF52DE',
+                            red: '#FF3B30',
+                            teal: '#5AC8FA',
+                            yellow: '#FFCC00',
+                            gray: {
+                                100: '#F2F2F7',
+                                200: '#E5E5EA',
+                                300: '#D1D1D6',
+                                400: '#C7C7CC',
+                                500: '#AEAEB2',
+                                600: '#8E8E93',
+                                700: '#636366',
+                                800: '#48484A',
+                                900: '#3A3A3C',
+                            },
+                            dark: '#1C1C1E',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        /* Game container styles */
+        .game-container {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Game iframe styles */
+        .game-frame {
+            width: 100%;
+            height: 680px;
+            border: none;
+            margin-top: -50px; /* Move content up by 20px */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .game-frame {
+                height: 680px;
+                margin-top: -40px; /* Keep consistent on mobile */
+            }
+        }
+        
+        /* Loading overlay */
+        .loading-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+        .section-link:hover {
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+        .nav-buttons {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-apple-gray-100 text-apple-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-apple-blue to-apple-purple py-8 px-4 md:px-8">
+        <div class="container mx-auto max-w-5xl">
+            <h1 class="text-3xl md:text-5xl font-bold text-white text-center mb-4">WebDev Navigator</h1>
+            <p class="text-xl text-white text-center">Essential resources for web developers, indie hackers, and digital creators</p>
+        </div>
+    </header>
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons bg-apple-gray-100/80 py-3 border-b border-apple-gray-200 mb-6">
+        <div class="container mx-auto max-w-5xl flex flex-wrap justify-center gap-2 px-4">
+            <a href="#research" class="px-3 py-2 bg-apple-blue text-white rounded-full text-sm font-medium hover:bg-apple-blue/90 transition-all">Research</a>
+            <a href="#essential-tools" class="px-3 py-2 bg-apple-purple text-white rounded-full text-sm font-medium hover:bg-apple-purple/90 transition-all">Essential Tools</a>
+            <a href="#competitor-research" class="px-3 py-2 bg-apple-green text-white rounded-full text-sm font-medium hover:bg-apple-green/90 transition-all">Competitor Research</a>
+            <a href="#templates" class="px-3 py-2 bg-apple-orange text-white rounded-full text-sm font-medium hover:bg-apple-orange/90 transition-all">Templates</a>
+            <a href="#news-resources" class="px-3 py-2 bg-apple-red text-white rounded-full text-sm font-medium hover:bg-apple-red/90 transition-all">News & Resources</a>
+        </div>
+    </div>
+
+    <main class="container mx-auto max-w-5xl px-4 py-4">
+        <!-- Introduction -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <p class="text-lg mb-4">A carefully curated collection of tools and resources accumulated over years of web development experience. While many navigation sites have disappeared, these are the resources I personally use regularly. Organized into five key categories to streamline your workflow from research to launch.</p>
+        </section>
+
+        <!-- Research & Keywords Section -->
+        <section id="research" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-apple-blue mb-6 border-b border-apple-gray-200 pb-2">Research & Keyword Analysis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://www.google.com/search" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Google Autocomplete</h3>
+                    <p class="text-apple-gray-700">Find popular search queries using Google's autocomplete feature. Append "keyword=" to your search.</p>
+                </a>
+                
+                <a href="https://www.toolify.ai/AI-Tools-revenue" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Toolify Rankings</h3>
+                    <p class="text-apple-gray-700">Track popular AI tools and their estimated revenue for market research.</p>
+                </a>
+                
+                <a href="https://theresanaiforthat.com/" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">AI Need Catalog</h3>
+                    <p class="text-apple-gray-700">Explore user needs and demands through AI tool listings and categories.</p>
+                </a>
+                
+                <a href="https://ahrefs.com/keyword-difficulty" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Keyword Difficulty</h3>
+                    <p class="text-apple-gray-700">Assess SEO competition for target keywords before launching your project.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Essential Tools Section -->
+        <section id="essential-tools" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-apple-blue mb-6 border-b border-apple-gray-200 pb-2">Essential Launch Tools</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Domain Search</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://leandomainsearch.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Lean Domain Search</h4>
+                        <p class="text-sm text-apple-gray-700">Find available domain names based on keywords.</p>
+                    </a>
+                    
+                    <a href="https://query.domains" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Query Domains</h4>
+                        <p class="text-sm text-apple-gray-700">Advanced domain search with filters.</p>
+                    </a>
+                    
+                    <a href="https://instantdomainsearch.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Instant Domain Search</h4>
+                        <p class="text-sm text-apple-gray-700">Real-time domain availability checking.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Domain Registrars</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://spaceship.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Spaceship</h4>
+                        <p class="text-sm text-apple-gray-700">Modern domain management platform.</p>
+                    </a>
+                    
+                    <a href="https://porkbun.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Porkbun</h4>
+                        <p class="text-sm text-apple-gray-700">Affordable domain registration with free privacy.</p>
+                    </a>
+                    
+                    <a href="https://namecheap.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Namecheap</h4>
+                        <p class="text-sm text-apple-gray-700">Popular registrar with competitive pricing.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Hosting & Deployment</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://github.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">GitHub</h4>
+                        <p class="text-sm text-apple-gray-700">Code repository and collaboration platform.</p>
+                    </a>
+                    
+                    <a href="https://cloudflare.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Cloudflare</h4>
+                        <p class="text-sm text-apple-gray-700">CDN, security, and serverless hosting.</p>
+                    </a>
+                    
+                    <a href="https://vercel.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Vercel</h4>
+                        <p class="text-sm text-apple-gray-700">Frontend deployment platform with optimized performance.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Analytics & Search Console</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://search.google.com/search-console" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Google Search Console</h4>
+                        <p class="text-sm text-apple-gray-700">Monitor and optimize your site's presence in search results.</p>
+                    </a>
+                    
+                    <a href="https://analytics.google.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Google Analytics</h4>
+                        <p class="text-sm text-apple-gray-700">Track website traffic and user behavior.</p>
+                    </a>
+                    
+                    <a href="https://www.bing.com/webmasters/submiturl" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Bing Webmaster Tools</h4>
+                        <p class="text-sm text-apple-gray-700">Submit your site to Bing search engine.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitor Research Section -->
+        <section id="competitor-research" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-apple-blue mb-6 border-b border-apple-gray-200 pb-2">Competitor Research</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="https://aitdk.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Traffic & Keyword Analysis</h3>
+                    <p class="text-apple-gray-700">View website traffic and ranking keywords with AITDK.</p>
+                </a>
+                
+                <a href="https://ahrefs.com/free-seo-tools" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Backlink Analysis</h3>
+                    <p class="text-apple-gray-700">Examine competitors' backlink profiles using Ahrefs free tools.</p>
+                </a>
+                
+                <a href="https://semrush.com" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Keyword Gap Analysis</h3>
+                    <p class="text-apple-gray-700">Identify keyword opportunities your competitors are ranking for.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Templates Section -->
+        <section id="templates" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-apple-blue mb-6 border-b border-apple-gray-200 pb-2">Project Templates</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Open Source Boilerplates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <a href="https://github.com/openRin/Rin" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Dynamic Cloudflare Blog</h4>
+                        <p class="text-sm text-apple-gray-700">Blog system with Cloudflare Pages, Workers, D1, and R2.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ixartz/Next-js-Boilerplate" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Next.js 15 Boilerplate</h4>
+                        <p class="text-sm text-apple-gray-700">Starter with App Router and Page Router support.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ixartz/SaaS-Boilerplate" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">SaaS Boilerplate</h4>
+                        <p class="text-sm text-apple-gray-700">Next.js + Tailwind CSS + Shadcn UI + TypeScript.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Next.js Landing Page</h4>
+                        <p class="text-sm text-apple-gray-700">Free template for marketing sites and landing pages.</p>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-2">
+                    <a href="#" class="text-apple-blue hover:underline inline-flex items-center" id="toggleMoreTemplates">
+                        <span>View more templates</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <div id="moreTemplates" class="hidden mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://github.com/ixartz/Astro-boilerplate" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Astro Boilerplate</h4>
+                        <p class="text-sm text-apple-gray-700">Responsive blog and portfolio template with Astro.</p>
+                    </a>
+                    
+                    <a href="https://github.com/weijunext/landing-page-boilerplate" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Versatile Landing Page</h4>
+                        <p class="text-sm text-apple-gray-700">For various projects and marketing campaigns.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ai-aigc-studio/Viggle-AI-WebUI" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Viggle AI Web Client</h4>
+                        <p class="text-sm text-apple-gray-700">Open source AI interface.</p>
+                    </a>
+                    
+                    <a href="https://github.com/weijunext/new-blog" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Weekly Blog System</h4>
+                        <p class="text-sm text-apple-gray-700">Blog platform for weekly content updates.</p>
+                    </a>
+                    
+                    <a href="https://github.com/daimajia/huntscreens" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Hunt Screens</h4>
+                        <p class="text-sm text-apple-gray-700">Screenshots of projects on Producthunt, YC, and Indiehackers.</p>
+                    </a>
+                    
+                    <a href="https://github.com/weijunext/smart-excel-ai" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Smart Excel AI</h4>
+                        <p class="text-sm text-apple-gray-700">Generate Excel formulas using ChatGPT.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ashleyrudland/nextjs_vps" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">NextJS VPS Example</h4>
+                        <p class="text-sm text-apple-gray-700">NextJS deployment on VPS servers.</p>
+                    </a>
+                    
+                    <a href="https://github.com/Pwntus/change-hairstyle-ai" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Hairstyle AI</h4>
+                        <p class="text-sm text-apple-gray-700">Get a new hairstyle in seconds with AI.</p>
+                    </a>
+                    
+                    <a href="https://github.com/replicate/green-screen-creator" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Green Screen Creator</h4>
+                        <p class="text-sm text-apple-gray-700">Track objects in videos and add green screen backgrounds.</p>
+                    </a>
+                    
+                    <a href="https://github.com/wasp-lang/open-saas" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Open SaaS</h4>
+                        <p class="text-sm text-apple-gray-700">Free, open-source SaaS app starter for React & Node.js.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ocluf/justship" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">JustShip Svelte SaaS</h4>
+                        <p class="text-sm text-apple-gray-700">Svelte 5 and SvelteKit SaaS boilerplate with full features.</p>
+                    </a>
+                    
+                    <a href="https://github.com/JavascriptMick/supanuxt-saas" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">SupaNuxt SaaS</h4>
+                        <p class="text-sm text-apple-gray-700">Nuxt3, Supabase, OAuth, Prisma, TRPC, Stripe, and more.</p>
+                    </a>
+                    
+                    <a href="https://github.com/saasfly/saasfly" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">SaaSfly</h4>
+                        <p class="text-sm text-apple-gray-700">SaaS template with bun create saasfly.</p>
+                    </a>
+                    
+                    <a href="https://github.com/mundane799699/xlike-web" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">ShipFast</h4>
+                        <p class="text-sm text-apple-gray-700">TypeScript SaaS template.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold text-apple-purple mb-4">Navigation Site Templates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://github.com/fre123-com/fre123-nav/" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">FRE123 Navigator</h4>
+                        <p class="text-sm text-apple-gray-700">Free resource sharing platform with one-click deployment.</p>
+                    </a>
+                    
+                    <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">WebStack.cc</h4>
+                        <p class="text-sm text-apple-gray-700">Static responsive website navigation template.</p>
+                    </a>
+                    
+                    <a href="https://github.com/dubinc/oss-gallery" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">OSS Gallery</h4>
+                        <p class="text-sm text-apple-gray-700">Crowdsourced list of the best open-source projects.</p>
+                    </a>
+                    
+                    <a href="https://github.com/6677-ai/tap4-ai-webui" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">AI Tools Directory</h4>
+                        <p class="text-sm text-apple-gray-700">One-click deployment for AI tools directory.</p>
+                    </a>
+                    
+                    <a href="https://github.com/all-in-aigc/gpts-works" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">GPTs Store</h4>
+                        <p class="text-sm text-apple-gray-700">A third-party GPTs directory.</p>
+                    </a>
+                    
+                    <a href="https://github.com/ddahan/ui-libs" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">UI Libs Picker</h4>
+                        <p class="text-sm text-apple-gray-700">A UI library picker for Vue 3 / Nuxt 3.</p>
+                    </a>
+                    
+                    <a href="https://github.com/DokeyAI/dokeyai-data" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">DokeyAI Data</h4>
+                        <p class="text-sm text-apple-gray-700">Public AI tools data for websites.</p>
+                    </a>
+                    
+                    <a href="https://vercel.com/templates" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                        <h4 class="font-semibold mb-1">Vercel Template Center</h4>
+                        <p class="text-sm text-apple-gray-700">Ready-to-use templates for Vercel deployments.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Resources Section -->
+        <section id="news-resources" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-apple-blue mb-6 border-b border-apple-gray-200 pb-2">News & Resources</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://liberating-doll-b8a.notion.site/Reddit-1a8e8aed91b18021839ecba8b74e530b" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Reddit Subreddit Directory</h3>
+                    <p class="text-apple-gray-700">Curated list of helpful Reddit communities for web development.</p>
+                </a>
+                
+                <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=en" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Google SEO Fundamentals</h3>
+                    <p class="text-apple-gray-700">Official guidelines for creating helpful, search-friendly content.</p>
+                </a>
+                
+                <a href="https://ahrefs.com/websites#trending" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Trending Websites</h3>
+                    <p class="text-apple-gray-700">Discover fast-growing websites identified by Ahrefs.</p>
+                </a>
+                
+                <a href="https://docs.google.com/spreadsheets/d/1QOdqq9KbjQj1JZO43vc1pir2rnEEsMgid=0" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">AI Video SaaS Tools</h3>
+                    <p class="text-apple-gray-700">Comprehensive list of AI video SaaS tools and platforms.</p>
+                </a>
+                
+                <a href="https://docs.google.com/spreadsheets/d/1eUni44pIURML2VWFFXKzNmmWKuuam9_ynr5Fo_Q74M/edit?gid=83151001" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">Solopreneur Report</h3>
+                    <p class="text-apple-gray-700">Starter Story Premium Solopreneur Report 2.0 with insights.</p>
+                </a>
+                
+                <a href="https://www.500mrr.com/" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">$500/Month Side Projects</h3>
+                    <p class="text-apple-gray-700">Showcase of successful side projects generating monthly revenue.</p>
+                </a>
+                
+                <a href="https://news.ycombinator.com/item?id=42373343" target="_blank" rel="noopener" class="section-link bg-apple-gray-100 p-4 rounded-lg hover:shadow-md transition-all">
+                    <h3 class="text-xl font-semibold text-apple-purple mb-2">HN: Side Projects in 2024</h3>
+                    <p class="text-apple-gray-700">Ask HN thread about side projects making $500/month in 2024.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-apple-dark text-white py-8 px-4">
+        <div class="container mx-auto max-w-5xl text-center">
+            <p class="mb-4">&copy; 2024 WebDev Navigator | <a href="https://webdev.navigator.com" class="text-apple-blue hover:underline">webdev.navigator.com</a></p>
+            <p class="text-apple-gray-500 text-sm">A curated collection of essential resources for web developers and digital creators.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle more templates visibility
+            const toggleButton = document.getElementById('toggleMoreTemplates');
+            const moreTemplates = document.getElementById('moreTemplates');
+            
+            toggleButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isHidden = moreTemplates.classList.contains('hidden');
+                
+                if (isHidden) {
+                    moreTemplates.classList.remove('hidden');
+                    toggleButton.querySelector('span').textContent = 'Show fewer templates';
+                    toggleButton.querySelector('svg').classList.add('rotate-180');
+                } else {
+                    moreTemplates.classList.add('hidden');
+                    toggleButton.querySelector('span').textContent = 'View more templates';
+                    toggleButton.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('id') !== 'toggleMoreTemplates') {
+                        e.preventDefault();
+                        
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
